@@ -40,6 +40,7 @@ module.exports = {
         points: "#00C853",
         captain: "#111111",
         viceCaptain: "#1E40AF",
+        border: "#E5E7EB",
 
         nigeria: {
           green: "#008751",
@@ -66,8 +67,11 @@ module.exports = {
       },
 
       fontFamily: {
-        sans: ["Poppins", "sans-serif"],
-        stats: ["Inter", "sans-serif"],
+        sans: ["Poppins-Regular"],
+        "sans-medium": ["Poppins-Medium"],
+        "sans-semibold": ["Poppins-SemiBold"],
+        "sans-bold": ["Poppins-Bold"],
+        "sans-italic": ["Poppins-Italic"],
       },
     },
   },

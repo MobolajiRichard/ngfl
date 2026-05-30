@@ -1,6 +1,7 @@
-import { Tabs } from 'expo-router';
-import { SymbolView } from 'expo-symbols';
-import Octicons from '@expo/vector-icons/Octicons';
+import { Feather, Ionicons, Octicons } from "@expo/vector-icons";
+import { Tabs } from "expo-router";
+import { Text } from "react-native";
+import { twMerge } from "tailwind-merge";
 
 export default function TabLayout() {
   return (
@@ -8,60 +9,139 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => (
-           <Octicons name="home-fill" size={24} color="black" />
+          title: "Home",
+          // tabBarLabelStyle:{()
+          //   fontFamily: "Roboto-Regular",
+          //   color:'red'
+          // },
+          tabBarLabel: ({ focused }) => (
+            <Text
+              style={{ fontFamily: "Roboto-Regular" }}
+              className={twMerge(
+                " font-sans-medium text-[12px]",
+                focused ? "text-[#006B2D]" : "text-[#9CA3AF]",
+              )}
+            >
+              Home
+            </Text>
           ),
+          tabBarIcon: ({ color, focused }) =>
+            focused ? (
+              <Octicons
+                name="home-fill"
+                size={24}
+                color={focused ? "#006B2D" : ""}
+              />
+            ) : (
+              <Octicons name="home" size={24} color="#9CA3AF" />
+            ),
         }}
       />
       <Tabs.Screen
         name="my-team"
         options={{
-          title: 'My Team',
-          tabBarIcon: ({ color }) => (
-            <SymbolView
-              name={{ ios: 'person.3.fill', android: 'groups', web: 'groups' }}
-              tintColor={color}
-              size={24}
-            />
+          title: "Home",
+          // tabBarLabelStyle:{()
+          //   fontFamily: "Roboto-Regular",
+          //   color:'red'
+          // },
+          tabBarLabel: ({ focused }) => (
+            <Text
+              style={{ fontFamily: "Roboto-Regular" }}
+              className={twMerge(
+                " font-sans-medium text-[12px]",
+                focused ? "text-[#006B2D]" : "text-[#9CA3AF]",
+              )}
+            >
+              My Team
+            </Text>
           ),
+          tabBarIcon: ({ color, focused }) =>
+            focused ? (
+              <Ionicons name="shirt" size={24} color="#006B2D" />
+            ) : (
+              <Ionicons name="shirt-outline" size={24} color="#9CA3AF" />
+            ),
         }}
       />
       <Tabs.Screen
         name="leagues"
         options={{
-          title: 'Leagues',
-          tabBarIcon: ({ color }) => (
-            <SymbolView
-              name={{ ios: 'trophy.fill', android: 'emoji_events', web: 'emoji_events' }}
-              tintColor={color}
-              size={24}
-            />
+          title: "",
+          // tabBarLabelStyle:{()
+          //   fontFamily: "Roboto-Regular",
+          //   color:'red'
+          // },
+          tabBarLabel: ({ focused }) => (
+            <Text
+              style={{ fontFamily: "Roboto-Regular" }}
+              className={twMerge(
+                " font-sans-medium text-[12px]",
+                focused ? "text-[#006B2D]" : "text-[#9CA3AF]",
+              )}
+            >
+              Leagues
+            </Text>
           ),
+          tabBarIcon: ({ color, focused }) =>
+            focused ? (
+              <Ionicons name="trophy" size={24} color="#006B2D" />
+            ) : (
+              <Ionicons name="trophy-outline" size={24} color="#9CA3AF" />
+            ),
         }}
       />
       <Tabs.Screen
         name="stats"
         options={{
-          title: 'Stats',
-          tabBarIcon: ({ color }) => (
-            <SymbolView
-              name={{ ios: 'chart.bar.fill', android: 'bar_chart', web: 'bar_chart' }}
-              tintColor={color}
-              size={24}
-            />
+          title: "Home",
+          // tabBarLabelStyle:{()
+          //   fontFamily: "Roboto-Regular",
+          //   color:'red'
+          // },
+          tabBarLabel: ({ focused }) => (
+            <Text
+              style={{ fontFamily: "Roboto-Regular" }}
+              className={twMerge(
+                " font-sans-medium text-[12px]",
+                focused ? "text-[#006B2D]" : "text-[#9CA3AF]",
+              )}
+            >
+           Stats
+            </Text>
           ),
+          tabBarIcon: ({ color, focused }) =>
+            focused ? (
+              <Ionicons name="stats-chart" size={24} color="#006B2D" />
+            ) : (
+              <Ionicons name="stats-chart-outline" size={24} color="#9CA3AF" />
+            ),
         }}
       />
       <Tabs.Screen
         name="more"
         options={{
-          title: 'More',
-          tabBarIcon: ({ color }) => (
-            <SymbolView
-              name={{ ios: 'ellipsis', android: 'more_horiz', web: 'more_horiz' }}
-              tintColor={color}
+          title: "Home",
+          // tabBarLabelStyle:{()
+          //   fontFamily: "Roboto-Regular",
+          //   color:'red'
+          // },
+          tabBarLabel: ({ focused }) => (
+            <Text
+              style={{ fontFamily: "Roboto-Regular" }}
+              className={twMerge(
+                " font-sans-medium text-[12px]",
+                focused ? "text-[#006B2D]" : "text-[#9CA3AF]",
+              )}
+            >
+              More
+            </Text>
+          ),
+          tabBarIcon: ({ color, focused }) => (
+            <Feather
+              name="more-horizontal"
               size={24}
+              color={focused ? "#006B2D" : "#9CA3AF"}
             />
           ),
         }}
